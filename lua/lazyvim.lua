@@ -17,6 +17,7 @@ require("lazy").setup({
 		dependencies = { 'nvim-lua/plenary.nvim' },
 	},
 	"rebelot/kanagawa.nvim",
+	"xiyaowong/transparent.nvim",
 	 {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 	 {'williamboman/mason.nvim'},
 	 {'williamboman/mason-lspconfig.nvim'},
