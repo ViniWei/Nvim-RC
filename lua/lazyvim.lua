@@ -26,7 +26,3 @@ require("lazy").setup({
 	 {'L3MON4D3/LuaSnip'},
 	 {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
 })
-
-require("plugins.treesitter")
-require("plugins.telescope")
-require("plugins.lsp")
