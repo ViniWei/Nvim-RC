@@ -1,8 +1,5 @@
 require("vimlazy")
-require("options")
 require("remap")
+require("options")
 require("colors")
-
-require("plugins.treesitter")
-require("plugins.telescope")
-require("plugins.lsp")
+require("plugins.config")
