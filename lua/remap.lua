@@ -10,3 +10,7 @@ vim.keymap.set("n", "<C-y>", "\"+y")
 vim.keymap.set("n", "<C-p>", "\"+p")
 vim.keymap.set("x", "<C-y>", "\"+y")
 vim.keymap.set("x", "<C-p>", "\"+p")
+
+vim.keymap.set("i", "\"", "\"\"<LEFT>");
+vim.keymap.set("i", "(", "()<LEFT>");
+vim.keymap.set("i", "{", "{}<LEFT>");
