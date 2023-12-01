@@ -26,5 +26,6 @@ require("lazy").setup({
     {'hrsh7th/nvim-cmp'},
     {'L3MON4D3/LuaSnip'},
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-    'ThePrimeagen/harpoon'
+    'ThePrimeagen/harpoon',
+    'mfussenegger/nvim-dap'
 })
