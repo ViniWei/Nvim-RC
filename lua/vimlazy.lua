@@ -36,5 +36,7 @@ require("lazy").setup({
             "MunifTanjim/nui.nvim",
         },
     },
-    'mfussenegger/nvim-dap'
+    'mfussenegger/nvim-dap',
+    'mbbill/undotree'
+
 })
