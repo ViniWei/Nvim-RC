@@ -11,3 +11,7 @@ vim.opt.expandtab = true
 vim.opt.incsearch = true
 
 vim.opt.updatetime = 500
+
+vim.opt.scrolloff = 8;
+
+vim.opt.virtualedit = "block"

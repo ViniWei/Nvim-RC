@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    'nvim-lua/plenary.nvim',
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
         dependencies = { 'nvim-lua/plenary.nvim' },
@@ -37,6 +38,6 @@ require("lazy").setup({
         },
     },
     'mfussenegger/nvim-dap',
+    'simrat39/rust-tools.nvim',
     'mbbill/undotree'
-
 })
