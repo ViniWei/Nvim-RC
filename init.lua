@@ -1,5 +1,0 @@
-require("vimlazy")
-require("remap")
-require("options")
-require("colors")
-require("plugins.config")
