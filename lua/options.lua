@@ -19,3 +19,7 @@ vim.opt.ignorecase = true
 vim.opt.termguicolors = true
 
 vim.g.mapleader = " "
+
+vim.opt.updatetime = 100
+
+vim.opt.timeoutlen = 800

@@ -6,6 +6,12 @@ return {
             defaults = {
                 file_ignore_patterns = {
                     "node_modules"
+                },
+                mappings = {
+                    i = {
+                        ["<C-d>"] = "move_selection_next",
+                        ["<C-u>"] = "move_selection_previous",
+                    }
                 }
             }
         })
