@@ -27,7 +27,6 @@ return {
         vim.g.loaded_netrwPlugin = 1
 
         require("nvim-tree").setup({
-            auto_close = true,
             git = {
                 ignore = false
             },
