@@ -1,3 +1,3 @@
 require("options")
 require("keybinds")
-require("plugins")
+require("lazy_init")
