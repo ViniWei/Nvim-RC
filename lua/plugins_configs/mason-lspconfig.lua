@@ -5,7 +5,7 @@ return {
             local mason_lspconfig = require("mason-lspconfig")
 
             mason_lspconfig.setup({
-                ensure_installed = { "lua_ls" }
+                ensure_installed = { "lua_ls", "tsserver" }
             })
 
             mason_lspconfig.setup_handlers({
