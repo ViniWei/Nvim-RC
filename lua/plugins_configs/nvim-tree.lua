@@ -19,6 +19,18 @@ local function my_on_attach(bufnr)
     end, opts('Open file and close tree'))
 end
 
+local function is_exclude_focused_file (event)
+    local excludes = { "node_modules" }
+
+    for _, value in ipairs(excludes) do
+        if string.match(event.match, value) then
+            return true
+        end
+    end
+
+    return false;
+end
+
 return {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -34,7 +46,8 @@ return {
                 side = "right",
             },
             update_focused_file = {
-                enable = true
+                enable = true,
+                exclude = is_exclude_focused_file
             },
             on_attach = my_on_attach,
         })
