@@ -32,8 +32,6 @@ return {
 
             -- LSP keybinds -- 
             lsp_zero.on_attach(function(client, bufnr)
-                lsp_zero.default_keymaps({buffer = bufnr})
-
                 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { noremap = true, silent = true })
                 vim.keymap.set("n", "<leader>k", function() vim.lsp.buf.hover() end, { noremap = true })
                 vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, { noremap = true })
@@ -43,7 +41,7 @@ return {
             --
 
             require("mason-lspconfig").setup({
-                ensure_installed = {},
+                ensure_installed = { "lua_ls", "tsserver" },
                 handlers = {
                     function(server_name)
                         require("lspconfig")[server_name].setup({})
