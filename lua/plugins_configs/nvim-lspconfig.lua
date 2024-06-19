@@ -1,8 +1,10 @@
 return {
     "neovim/nvim-lspconfig",
     config = function ()
-        vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "<leader>k", "<cmd>lua vim.lsp.buf.hover()<CR>", {noremap = true})
-        vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", {noremap = true})
+        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { noremap = true, silent = true })
+        vim.keymap.set("n", "<leader>k", function() vim.lsp.buf.hover() end, { noremap = true })
+        vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, { noremap = true })
+        vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, { noremap = true })
+        vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, { noremap = true })
     end
 }
