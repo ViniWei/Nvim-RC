@@ -23,6 +23,3 @@ vim.g.mapleader = " "
 vim.opt.updatetime = 100
 
 vim.opt.timeoutlen = 800
-
-    -- Windows only -- 
-vim.opt.shell = 'powershell.exe'
