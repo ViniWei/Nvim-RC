@@ -3,7 +3,9 @@ return {
         dependencies = { "williamboman/mason.nvim" },
         "williamboman/mason-lspconfig.nvim"
     },
-    {"neovim/nvim-lspconfig"},
+    {
+        "neovim/nvim-lspconfig"
+    },
     {
         "hrsh7th/cmp-nvim-lsp",
         config = function()
@@ -20,15 +22,25 @@ return {
             })
         end
     },
-    {"hrsh7th/nvim-cmp"},
-    {"L3MON4D3/LuaSnip"},
-
+    {
+        "hrsh7th/nvim-cmp"
+    },
+    {
+        "L3MON4D3/LuaSnip"
+    },
+    {
+        "j-hui/fidget.nvim",
+        config = function ()
+            require("fidget").setup() 
+        end
+    },
     {
         "VonHeikemen/lsp-zero.nvim",
         branch = "v3.x",
         dependencies = { "williamboman/mason-lspconfig.nvim" },
         config = function ()
             local lsp_zero = require("lsp-zero")
+            lsp_zero.extend_lspconfig()
 
             -- LSP keybinds -- 
             lsp_zero.on_attach(function(client, bufnr)
