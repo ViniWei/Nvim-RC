@@ -1,3 +1,3 @@
 require("options")
-require("keybinds")
+require("keymaps")
 require("lazy_init")
