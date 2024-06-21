@@ -3,7 +3,14 @@ return {
     config = function ()
         require("toggleterm").setup({
             open_mapping = [[<C-n>]],
-            shell="powershell.exe"
+            shell="powershell.exe",
+            size = function(term)
+                if term.direction == "horizontal" then
+                    return 20
+                elseif term.direction == "vertical" then
+                    return vim.o.columns * 0.4
+                end
+            end,
         })
 
         function _G.set_terminal_keymaps()
