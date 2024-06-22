@@ -9,22 +9,17 @@ local function split_string(inputstr, sep)
   return t
 end
 
-local function buffername_projectname()
-    local final_string = ""
-    local buffer_path = split_string(vim.fn.expand('%'), "\\")
-    final_string = buffer_path[#buffer_path]
-
+local function project_name()
     local project_path = vim.inspect(vim.lsp.buf.list_workspace_folders()[1])
 
     if (project_path ~= "nil") then
         project_path = split_string(project_path, "/")
-        local project_name = project_path[#project_path]
-        project_name = project_name:sub(1, -2)
+        local project_folder = project_path[#project_path]
+        project_folder = project_folder:sub(1, -2)
 
-        final_string = final_string .. " | " .. project_name
+        return project_folder
     end
-
-    return final_string
+    return ""
 end
 
 return {
@@ -36,7 +31,7 @@ return {
                 section_separators = ""
             },
             sections = {
-                 lualine_c = { buffername_projectname }
+                 lualine_c = { 'filename', project_name }
             }
         })
     end
