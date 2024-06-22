@@ -50,8 +50,8 @@ return {
                 vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, { noremap = true })
                 vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, { noremap = true })
 
-                vim.keymap.set("n", "[d", function() vim.diagnostic.go_prev() end, { noremap = true })
-                vim.keymap.set("n", "d]", function() vim.diagnostic.go_next() end, { noremap = true })
+                vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, { noremap = true })
+                vim.keymap.set("n", "d]", function() vim.diagnostic.goto_next() end, { noremap = true })
             end)
             --
 
