@@ -30,17 +30,18 @@ local function setup_dap_ui_events(dap, dapui)
     dap.listeners.before.launch.dapui_config = function()
         dapui.open()
     end
-    dap.listeners.before.event_terminated.dapui_config = function()
-        dapui.close()
-    end
+    --dap.listeners.before.event_terminated.dapui_config = function()
+    --    dapui.close()
+    --end
     dap.listeners.before.event_exited.dapui_config = function()
         dapui.close()
     end
 end
 
-local function add_key_maps()
+local function add_key_maps(dapui)
    vim.keymap.set("n", "<leader>db", ":DapToggleBreakpoint<enter>")
    vim.keymap.set("n", "<leader>dc", ":DapContinue<enter>")
+   vim.keymap.set("n", "<leader>dh", function () dapui.close() end)
 end
 
 return {
@@ -54,7 +55,7 @@ return {
             local dap = require("dap")
             local dapui = require("dapui")
 
-            add_key_maps()
+            add_key_maps(dapui)
             setup_vscode_js_debug(dap)
 
             -- Dap UI --
