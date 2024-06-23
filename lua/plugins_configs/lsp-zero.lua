@@ -66,6 +66,9 @@ return {
                     ['<C-u>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior, count = 1 })
                 }),
                 --
+                performance = {
+                    max_view_entries = 12
+                }
             })
         end
     },
