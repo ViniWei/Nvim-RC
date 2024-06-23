@@ -1,3 +1,48 @@
+local function keymaps_lsp(lsp_zero)
+    lsp_zero.on_attach(function(client, bufnr)
+        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { noremap = true, silent = true })
+        vim.keymap.set("n", "<leader>k", function() vim.lsp.buf.hover() end, { noremap = true })
+        vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, { noremap = true })
+        vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, { noremap = true })
+        vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, { noremap = true })
+
+        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, { noremap = true })
+        vim.keymap.set("n", "d]", function() vim.diagnostic.goto_next() end, { noremap = true })
+    end)
+end
+
+local function mason_lspconfiguration(mason_lspconfig)
+    mason_lspconfig.setup({
+        ensure_installed = { "lua_ls", "tsserver", "volar" },
+        handlers = {
+            function(server_name)
+                require("lspconfig")[server_name].setup({})
+            end,
+            ["lua_ls"] = function ()
+                local lspconfig = require("lspconfig")
+                lspconfig.lua_ls.setup {
+                    settings = {
+                        Lua = {
+                            diagnostics = {
+                                globals = { "vim" }
+                            }
+                        }
+                    }
+                }
+            end,
+            ["volar"] = function ()
+                require("lspconfig").volar.setup({
+                    init_options = {
+                        vue = {
+                            hybridMode = false
+                        },
+                    }
+                })
+            end
+        },
+    })
+end
+
 return {
     {
         dependencies = { "williamboman/mason.nvim" },
@@ -14,11 +59,13 @@ return {
                 sources = {
                     { name = 'nvim_lsp' }
                 },
+                -- Keymaps cmp --
                 mapping = cmp.mapping.preset.insert({
                     ['<CR>'] = cmp.mapping.confirm({ select = true }),
                     ['<C-d>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior, count = 1 }),
                     ['<C-u>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior, count = 1 })
                 }),
+                --
             })
         end
     },
@@ -40,42 +87,12 @@ return {
         dependencies = { "williamboman/mason-lspconfig.nvim" },
         config = function ()
             local lsp_zero = require("lsp-zero")
+            local mason_lspconfig = require("mason-lspconfig")
+
             lsp_zero.extend_lspconfig()
 
-            -- LSP keybinds -- 
-            lsp_zero.on_attach(function(client, bufnr)
-                vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { noremap = true, silent = true })
-                vim.keymap.set("n", "<leader>k", function() vim.lsp.buf.hover() end, { noremap = true })
-                vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, { noremap = true })
-                vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, { noremap = true })
-                vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, { noremap = true })
-
-                vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, { noremap = true })
-                vim.keymap.set("n", "d]", function() vim.diagnostic.goto_next() end, { noremap = true })
-            end)
-            --
-
-            require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "tsserver" },
-                handlers = {
-                    function(server_name)
-                        require("lspconfig")[server_name].setup({})
-                    end,
-                    ["lua_ls"] = function ()
-                        local lspconfig = require("lspconfig")
-                        lspconfig.lua_ls.setup {
-                            settings = {
-                                Lua = {
-                                    diagnostics = {
-                                        globals = { "vim" }
-                                    }
-                                }
-                            }
-                        }
-                    end,
-                },
-            })
-
+            keymaps_lsp(lsp_zero)
+            mason_lspconfiguration(mason_lspconfig)
         end
     },
 }
