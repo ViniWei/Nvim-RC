@@ -13,7 +13,7 @@ end
 
 local function mason_lspconfiguration(mason_lspconfig)
     mason_lspconfig.setup({
-        ensure_installed = { "lua_ls", "tsserver", "volar" },
+        ensure_installed = { "lua_ls", "tsserver", "volar", "cssls" },
         handlers = {
             function(server_name)
                 require("lspconfig")[server_name].setup({})
