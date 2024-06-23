@@ -23,6 +23,25 @@ local function setup_vscode_js_debug (dap)
 
 end
 
+local function setup_netcore_debug(dap)
+    dap.adapters.coreclr = {
+        type = 'executable',
+        command = vim.fn.stdpath("data") .. '/mason/packages/netcoredbg/netcoredbg/netcoredbg',
+        args = {'--interpreter=vscode'}
+    }
+
+    dap.configurations.cs = {
+        {
+            type = "coreclr",
+            name = "launch - netcoredbg",
+            request = "launch",
+            program = function()
+                return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+            end,
+        },
+    }
+end
+
 local function setup_dap_ui_events(dap, dapui)
     dap.listeners.before.attach.dapui_config = function()
         dapui.open()
@@ -57,6 +76,7 @@ return {
 
             add_key_maps(dapui)
             setup_vscode_js_debug(dap)
+            setup_netcore_debug(dap)
 
             -- Dap UI --
             dapui.setup()
