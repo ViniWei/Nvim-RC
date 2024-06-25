@@ -30,15 +30,34 @@ local function mason_lspconfiguration(mason_lspconfig)
                     }
                 }
             end,
-            ["volar"] = function ()
-                require("lspconfig").volar.setup({
+            tsserver = function()
+                local vue_typescript_plugin = require('mason-registry')
+                .get_package('vue-language-server')
+                :get_install_path()
+                .. '/node_modules/@vue/language-server'
+                .. '/node_modules/@vue/typescript-plugin'
+
+                require('lspconfig').tsserver.setup({
                     init_options = {
-                        vue = {
-                            hybridMode = false
-                        },
-                    }
+                        plugins = {
+                            {
+                                name = "@vue/typescript-plugin",
+                                location = vue_typescript_plugin,
+                                languages = {'javascript', 'typescript', 'vue'}
+                            },
+                        }
+                    },
+                    filetypes = {
+                        'javascript',
+                        'javascriptreact',
+                        'javascript.jsx',
+                        'typescript',
+                        'typescriptreact',
+                        'typescript.tsx',
+                        'vue',
+                    },
                 })
-            end
+            end,
         },
     })
 end
