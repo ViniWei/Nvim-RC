@@ -22,5 +22,8 @@ vim.keymap.set("n", "<leader>!", ":q!<enter>", { silent = true })
 
 vim.keymap.set("n", "<leader>f", ":tab split<enter>")
 
+vim.keymap.set("n", "<C-n>", ":cnext<enter>")
+vim.keymap.set("n", "<C-p>", ":cprevious<enter>")
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
