@@ -13,7 +13,7 @@ end
 
 local function mason_lspconfiguration(mason_lspconfig)
     mason_lspconfig.setup({
-        ensure_installed = { "lua_ls", "tsserver", "volar", "cssls" },
+        ensure_installed = { "lua_ls", "ts_ls", "volar", "cssls" },
         handlers = {
             function(server_name)
                 require("lspconfig")[server_name].setup({})
@@ -30,14 +30,14 @@ local function mason_lspconfiguration(mason_lspconfig)
                     }
                 }
             end,
-            tsserver = function()
+            ts_ls = function()
                 local vue_typescript_plugin = require('mason-registry')
                 .get_package('vue-language-server')
                 :get_install_path()
                 .. '/node_modules/@vue/language-server'
                 .. '/node_modules/@vue/typescript-plugin'
 
-                require('lspconfig').tsserver.setup({
+                require('lspconfig').ts_ls.setup({
                     init_options = {
                         plugins = {
                             {
@@ -57,6 +57,7 @@ local function mason_lspconfiguration(mason_lspconfig)
                         'vue',
                     },
                 })
+
             end,
         },
     })
