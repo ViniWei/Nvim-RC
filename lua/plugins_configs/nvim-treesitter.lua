@@ -7,6 +7,9 @@ return {
 
             highlight = {
                 enable = true
+            },
+            indent = {
+                enable = false
             }
         })
     end
