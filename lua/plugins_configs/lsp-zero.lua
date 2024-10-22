@@ -7,7 +7,7 @@ local function keymaps_lsp(lsp_zero)
         vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, { noremap = true })
 
         vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, { noremap = true })
-        vim.keymap.set("n", "d]", function() vim.diagnostic.goto_next() end, { noremap = true })
+        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, { noremap = true })
     end)
 end
 
