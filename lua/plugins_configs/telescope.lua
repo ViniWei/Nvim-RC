@@ -19,8 +19,7 @@ return {
 
         vim.keymap.set("n", "<C-s>", ":Telescope find_files<enter>")
 
-        vim.keymap.set("n", "<leader>st", function ()
-            require("telescope.builtin").grep_string({ search  = vim.fn.input("Grep > ")})
-        end)
+        vim.keymap.set("n", "<C-b>", ":Telescope git_branches<enter>")
+        vim.keymap.set("n", "<leader>st", ":Telescope live_grep<enter>")
     end
 }
