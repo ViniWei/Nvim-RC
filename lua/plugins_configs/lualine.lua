@@ -32,7 +32,7 @@ return {
                 theme = "codedark",
             },
             sections = {
-                 lualine_c = { 'filename', project_name }
+                lualine_c = { {'filename', path = 1}, project_name }
             }
         })
     end
