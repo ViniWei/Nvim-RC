@@ -9,10 +9,7 @@ return {
          use_default_keymaps = false,
          keymaps = {
              ["s"] = "actions.select",
-             ["g?"] = "actions.show_help",
-             ["gs"] = "actions.change_sort",
-             ["gx"] = "actions.open_external",
-             ["g."] = "actions.toggle_hidden",
+             ["<C-s>"] = false
          },
      })
      vim.keymap.set("n", "<C-e>", "<CMD>Oil<CR>", { desc = "Open parent directory" })
