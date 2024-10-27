@@ -20,6 +20,8 @@ vim.keymap.set("n", "<C-r>j", [[<cmd>horizontal resize -6<cr>]])
 vim.keymap.set("n", "<leader>q", ":q<enter>", { silent = true })
 vim.keymap.set("n", "<leader>!", ":q!<enter>", { silent = true })
 
+vim.keymap.set("n", "<C-e>", ":Ex<enter>")
+
 vim.keymap.set("n", "<leader>f", ":tab split<enter>")
 
 vim.keymap.set("n", "<C-x>", ":cnext<enter>")
