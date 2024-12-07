@@ -22,6 +22,14 @@ local function project_name()
     return ""
 end
 
+local function IsZoomedIn()
+    if vim.t['simple-zoom'] == nil then
+        return ''
+    elseif vim.t['simple-zoom']== 'zoom' then
+        return '󰍉'
+    end
+end
+
 return {
     "nvim-lualine/lualine.nvim",
     config = function ()
@@ -32,7 +40,8 @@ return {
                 theme = "codedark",
             },
             sections = {
-                lualine_c = { {'filename', path = 1}, project_name }
+                lualine_c = { { 'filename', path = 1 }, project_name,  },
+                lualine_x = { { IsZoomedIn }, 'encoding', 'fileformat', 'filetype' }
             }
         })
     end
