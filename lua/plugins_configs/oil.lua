@@ -20,6 +20,9 @@ return {
         ["gx"] = "actions.open_external",
         ["g."] = { "actions.toggle_hidden", mode = "n" },
         ["g\\"] = { "actions.toggle_trash", mode = "n" },
+      },
+      view_options = {
+        show_hidden = true,
       }
     })
     vim.keymap.set("n", "<C-e>", function () vim.cmd("Oil") end)
