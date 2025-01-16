@@ -37,7 +37,7 @@ return {
             options = {
                 component_separators = "|",
                 section_separators = "",
-                theme = "codedark",
+                theme = "auto",
             },
             sections = {
                 lualine_c = { { 'filename', path = 1 }, project_name,  },
