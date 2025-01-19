@@ -24,7 +24,8 @@ local function mason_lspconfiguration(mason_lspconfig)
                     settings = {
                         Lua = {
                             diagnostics = {
-                                globals = { "vim", "love"}
+                                globals = { "vim", "love" },
+                                disable = { "lowercase-global" }
                             }
                         }
                     }
