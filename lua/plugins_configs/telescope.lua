@@ -17,5 +17,6 @@ return {
         vim.keymap.set("n", "<leader>st", ":Telescope live_grep<enter>")
         vim.keymap.set("n", "<leader>sh", ":Telescope help_tags<enter>")
         vim.keymap.set("n", "<leader>sc", ":Telescope commands<enter>")
+        vim.keymap.set("n", "<leader>sb", ":Telescope buffers<enter>")
     end
 }
