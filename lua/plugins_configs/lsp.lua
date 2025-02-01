@@ -16,18 +16,16 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             local mason_lspconfig = require("mason-lspconfig")
-            local capabilities = require('blink.cmp').get_lsp_capabilities()
 
             mason_lspconfig.setup({
                 ensure_installed = { "lua_ls", "jsonls", "ts_ls" }
             })
-
             mason_lspconfig.setup_handlers({
                 function(server_name)
-                    require("lspconfig")[server_name].setup({ capabilities = capabilities })
+                    require("lspconfig")[server_name].setup({})
                 end,
                 ["lua_ls"] = function()
-                   lua_ls_setup()
+                    lua_ls_setup()
                 end
             })
         end
