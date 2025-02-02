@@ -12,8 +12,8 @@ return {
         })
 
         vim.keymap.set("n", "<C-s>", ":Telescope find_files<enter>")
-
         vim.keymap.set("n", "<C-b>", ":Telescope git_branches<enter>")
+
         vim.keymap.set("n", "<leader>st", ":Telescope live_grep<enter>")
         vim.keymap.set("n", "<leader>sh", ":Telescope help_tags<enter>")
         vim.keymap.set("n", "<leader>sc", ":Telescope commands<enter>")
