@@ -3,6 +3,10 @@ return {
   config = function()
     require("vague").setup({
       transparent = true,
+      style = {
+        comments = "none",
+        strings = "none",
+      },
     })
     vim.cmd("colorscheme vague")
   end
