@@ -8,12 +8,6 @@ return {
             nerd_font_variant = "mono"
         },
         signature = { enabled = true },
-        sources = {
-            providers = {
-                cmdline = {
-                    enabled = false               }
-            }
-        }
     },
     opts_extend = { "sources.default" }
 }
