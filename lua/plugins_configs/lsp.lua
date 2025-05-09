@@ -33,23 +33,22 @@ return {
             local mason_lspconfig = require("mason-lspconfig")
 
             mason_lspconfig.setup({
-                ensure_installed = { "lua_ls", "jsonls", "ts_ls", "volar" }
-            })
-            mason_lspconfig.setup_handlers({
-                function(server_name)
-                    require("lspconfig")[server_name].setup({})
-                end,
-                ["lua_ls"] = function()
-                    lua_ls_setup()
-                end,
-                ["ts_ls"] = function ()
-                    ts_ls_setup()
-                end
+                ensure_installed = { "lua_ls", "jsonls", "ts_ls", "volar" },
+                automatic_enable = {
+                    exclude = {
+                        "ts_ls",
+                        "lua_ls"
+                    };
+                },
             })
         end
     },
     {
         dependencies = { "williamboman/mason-lspconfig.nvim" },
         "neovim/nvim-lspconfig",
+        config = function ()
+           ts_ls_setup()
+           lua_ls_setup()
+        end
     }
 }
