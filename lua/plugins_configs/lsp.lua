@@ -33,7 +33,7 @@ return {
             local mason_lspconfig = require("mason-lspconfig")
 
             mason_lspconfig.setup({
-                ensure_installed = { "lua_ls", "jsonls", "ts_ls", "volar" },
+                ensure_installed = { "lua_ls", "jsonls", "ts_ls", "vue_ls" },
                 automatic_enable = {
                     exclude = {
                         "ts_ls",
