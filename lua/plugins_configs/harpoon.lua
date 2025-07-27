@@ -3,7 +3,7 @@ return {
     config = function ()
         require("harpoon").setup({})
 
-        vim.keymap.set('n', '<leader>jm', function() require('harpoon.ui').toggle_quick_menu() end, {noremap = true})
+        vim.keymap.set('n', '<leader>jo', function() require('harpoon.ui').toggle_quick_menu() end, {noremap = true})
         vim.keymap.set('n', '<leader>ji', function() require("harpoon.mark").add_file() end, {noremap = true})
 
         vim.keymap.set('n', '<leader>ja', function() require("harpoon.ui").nav_file(1) end, {noremap = true})
