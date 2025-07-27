@@ -25,6 +25,6 @@ return {
         show_hidden = true,
       }
     })
-    vim.keymap.set("n", "<C-e>", function () vim.cmd("Oil") end)
+    vim.keymap.set("n", "<leader>.", function () vim.cmd("Oil") end)
   end
 }
