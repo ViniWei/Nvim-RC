@@ -4,7 +4,7 @@ return {
     },
     "tpope/vim-fugitive",
     config = function ()
-       vim.keymap.set("n", "<leader>gm", ":G<enter>")
+       vim.keymap.set("n", "<leader>go", ":G<enter>")
        vim.keymap.set("n", "<leader>gu", ":GBrowse<enter>")
     end
 }
