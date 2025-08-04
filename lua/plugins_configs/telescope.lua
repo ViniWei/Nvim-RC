@@ -5,8 +5,16 @@ return {
         local telescope = require('telescope')
         telescope.setup({
             defaults = {
-                file_ignore_patterns = {
-                    "node_modules"
+                prompt_prefix = " ",
+                selection_caret = " ",
+                entry_prefix = " ",
+                sorting_strategy = "ascending",
+                layout_config = {
+                    horizontal = {
+                        prompt_position = "top",
+                    },
+                    width = 0.90,
+                    height = 0.80,
                 },
             }
         })
