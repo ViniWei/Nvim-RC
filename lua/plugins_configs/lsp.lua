@@ -1,5 +1,5 @@
 local function lua_ls_setup()
-    require("lspconfig").lua_ls.setup {
+    vim.lsp.config("lua_ls", {
         settings = {
             Lua = {
                 diagnostics = {
@@ -7,31 +7,15 @@ local function lua_ls_setup()
                 }
             }
         }
-    }
+    })
 end
 
 return {
     {
-        dependencies = { "williamboman/mason.nvim", "saghen/blink.cmp" },
-        "williamboman/mason-lspconfig.nvim",
-        config = function()
-            local mason_lspconfig = require("mason-lspconfig")
-
-            mason_lspconfig.setup({
-                ensure_installed = { "lua_ls", "jsonls", "ts_ls" },
-                automatic_enable = {
-                    exclude = {
-                        "lua_ls"
-                    };
-                },
-            })
-        end
-    },
-    {
-        dependencies = { "williamboman/mason-lspconfig.nvim" },
         "neovim/nvim-lspconfig",
         config = function ()
            lua_ls_setup()
+           vim.lsp.enable({ "ts_ls", "jsonls", "pylsp", "lua_ls" })
         end
     }
 }
