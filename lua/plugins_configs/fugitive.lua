@@ -1,6 +1,7 @@
 return {
     dependencies = {
-        "tpope/vim-rhubarb"
+        "tpope/vim-rhubarb",
+        "cedarbaum/fugitive-azure-devops.vim"
     },
     "tpope/vim-fugitive",
     config = function ()
