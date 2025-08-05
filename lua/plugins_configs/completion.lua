@@ -8,6 +8,11 @@ return {
             nerd_font_variant = "mono"
         },
         signature = { enabled = true },
+        completion = {
+            menu = {
+                border = "none",
+            }
+        }
     },
     opts_extend = { "sources.default" }
 }
