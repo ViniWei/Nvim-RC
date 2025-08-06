@@ -12,7 +12,16 @@ end
 
 local function ts_ls_setup()
     vim.lsp.config("ts_ls", {
-        filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue" }
+        filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue" },
+        init_options = {
+            plugins = {
+                {
+                    name = '@vue/typescript-plugin',
+                    location = vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+                    languages = { 'vue' },
+                },
+            },
+        },
     })
 end
 
