@@ -14,6 +14,9 @@ local function ts_ls_setup()
     vim.lsp.config("ts_ls", {
         filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue" },
         init_options = {
+            preferences = {
+                disableSuggestions = true,
+            },
             plugins = {
                 {
                     name = '@vue/typescript-plugin',
