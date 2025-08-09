@@ -1,6 +1,6 @@
 vim.keymap.set("n", "<leader>w", ":w<enter>")
 
-vim.keymap.set("n", "<leader>n", ":noh<enter>")
+vim.keymap.set("n", "<leader>n", ":noh<enter>:echo ''<esc>")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
