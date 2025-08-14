@@ -11,9 +11,6 @@ local lua_ls_config = {
 local ts_ls_config = {
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue" },
     init_options = {
-        preferences = {
-            disableSuggestions = true,
-        },
         plugins = {
             {
                 name = '@vue/typescript-plugin',
