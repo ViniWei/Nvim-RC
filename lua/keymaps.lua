@@ -20,4 +20,4 @@ vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format)
 
 vim.keymap.set("t", "<esc><esc>", [[<C-\><C-n>]]);
 
-vim.keymap.set("n", "<leader>g", ":te git ");
+vim.keymap.set("n", "<leader>go", ":te git ");
