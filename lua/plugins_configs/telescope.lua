@@ -1,8 +1,10 @@
 return {
     "nvim-telescope/telescope.nvim",
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function ()
-        local telescope = require('telescope')
+        local telescope = require("telescope")
+        local builtin = require("telescope.builtin")
+
         telescope.setup({
             defaults = {
                 prompt_prefix = " ",
@@ -19,11 +21,12 @@ return {
             }
         })
 
-        vim.keymap.set("n", "<leader>sf", ":Telescope find_files<enter>")
-        vim.keymap.set("n", "<leader>sb", ":Telescope git_branches<enter>")
-        vim.keymap.set("n", "<leader>st", ":Telescope live_grep<enter>")
-        vim.keymap.set("n", "<leader>sh", ":Telescope help_tags<enter>")
-        vim.keymap.set("n", "<leader>sc", ":Telescope commands<enter>")
-        vim.keymap.set("n", "<leader>sB", ":Telescope buffers<enter>")
+        vim.keymap.set("n", "<leader>sf", builtin.find_files)
+        vim.keymap.set("n", "<leader>st", builtin.live_grep)
+        vim.keymap.set("n", "<leader>sh", builtin.help_tags)
+        vim.keymap.set("n", "<leader>sc", builtin.commands)
+        vim.keymap.set("n", "<leader>sB", builtin.buffers)
+        vim.keymap.set("n", "<leader>sb", builtin.git_branches)
+        vim.keymap.set("n", "<leader>ss", builtin.git_status)
     end
 }
