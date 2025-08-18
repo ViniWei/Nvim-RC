@@ -25,8 +25,9 @@ return {
         vim.keymap.set("n", "<leader>st", builtin.live_grep)
         vim.keymap.set("n", "<leader>sh", builtin.help_tags)
         vim.keymap.set("n", "<leader>sc", builtin.commands)
-        vim.keymap.set("n", "<leader>sB", builtin.buffers)
-        vim.keymap.set("n", "<leader>sb", builtin.git_branches)
-        vim.keymap.set("n", "<leader>ss", builtin.git_status)
+        vim.keymap.set("n", "<leader>sb", builtin.buffers)
+
+        vim.keymap.set("n", "<leader>gb", builtin.git_branches)
+        vim.keymap.set("n", "<leader>gs", builtin.git_status)
     end
 }

@@ -12,6 +12,6 @@ return {
         })
 
         vim.keymap.set("n", "<leader>gd", gitsigns.diffthis, { silent = true })
-        vim.keymap.set('n', '<leader>gb', gitsigns.toggle_current_line_blame)
+        vim.keymap.set('n', '<leader>gt', gitsigns.toggle_current_line_blame)
     end
 }
