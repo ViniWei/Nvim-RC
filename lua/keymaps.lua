@@ -8,7 +8,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 -- terminal and git
 vim.keymap.set("t", "<esc><esc>", [[<C-\><C-n>]]);
 vim.keymap.set("n", "<leader>t", ":te<CR>i");
-vim.keymap.set("n", "<leader>gl", ":te git log<CR>");
+vim.keymap.set("n", "<leader>gl", ":te git log<CR>i");
 vim.keymap.set("n", "<leader>gs", ":te git status<CR>i");
 vim.keymap.set("n", "<leader>go", ":te git ");
 
