@@ -28,6 +28,6 @@ return {
         vim.keymap.set("n", "<leader>sb", builtin.buffers)
 
         vim.keymap.set("n", "<leader>gb", builtin.git_branches)
-        vim.keymap.set("n", "<leader>gs", builtin.git_status)
+        vim.keymap.set("n", "<leader>gc", builtin.git_status)
     end
 }
