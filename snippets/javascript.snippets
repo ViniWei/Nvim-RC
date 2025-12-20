@@ -8,8 +8,8 @@ snippet fof
 	}
 snippet if
 	if (${1:condition}) {
-		${0}
-	}
+		${2}
+	} ${0}
 snippet tc
 	try {
 		${1}
@@ -18,7 +18,7 @@ snippet tc
 	}
 snippet fn
 	function ${1:name}(${2}) {
-		${3}
+		${0}
 	}
 snippet imp
 	import ${1:module} from '${2:path}'
