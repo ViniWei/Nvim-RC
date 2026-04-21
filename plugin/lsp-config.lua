@@ -1,3 +1,5 @@
+vim.pack.add({"https://github.com/neovim/nvim-lspconfig"})
+
 local lua_ls_config = {
     settings = {
         Lua = {
@@ -38,15 +40,9 @@ local py_ls_config = {
 }
 
 
-return {
-    {
-        "neovim/nvim-lspconfig",
-        config = function ()
-           vim.lsp.config("lua_ls", lua_ls_config)
-           vim.lsp.config("ts_ls", ts_ls_config)
-           vim.lsp.config("basedpyright", py_ls_config)
 
-           vim.lsp.enable({ "ts_ls", "jsonls", "basedpyright", "lua_ls", "vue_ls" })
-        end
-    }
-}
+vim.lsp.config("lua_ls", lua_ls_config)
+vim.lsp.config("ts_ls", ts_ls_config)
+vim.lsp.config("basedpyright", py_ls_config)
+
+vim.lsp.enable({ "ts_ls", "jsonls", "basedpyright", "lua_ls", "vue_ls" })

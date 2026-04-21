@@ -1,10 +1,8 @@
-return {
-  "stevearc/oil.nvim",
-  opts = {},
-  config = function ()
-    require("oil").setup({
-      use_default_keymaps = false,
-      keymaps  = {
+vim.pack.add({"https://github.com/stevearc/oil.nvim"})
+
+require("oil").setup({
+    use_default_keymaps = false,
+    keymaps  = {
         ["g?"] = { "actions.show_help", mode = "n" },
         ["s"] = "actions.select",
         ["<enter>"] = "actions.select",
@@ -19,11 +17,9 @@ return {
         ["gx"] = "actions.open_external",
         ["g."] = { "actions.toggle_hidden", mode = "n" },
         ["g\\"] = { "actions.toggle_trash", mode = "n" },
-      },
-      view_options = {
+    },
+    view_options = {
         show_hidden = true,
-      }
-    })
-    vim.keymap.set("n", "<C-e>", function () vim.cmd("Oil") end)
-  end
-}
+    }
+})
+vim.keymap.set("n", "<C-e>", function () vim.cmd("Oil") end)
