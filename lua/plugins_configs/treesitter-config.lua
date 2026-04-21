@@ -31,13 +31,6 @@ return {
             return
           end
 
-          if ft == "javascriptreact" or ft == "typescriptreact" then
-            vim.opt_local.foldmethod = "indent"
-          else
-            vim.opt_local.foldmethod = "expr"
-            vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-          end
-
           vim.schedule(function()
             -- Execute normalmente apenas se não estivermos em modo terminal
             if vim.fn.mode() ~= "t" then
