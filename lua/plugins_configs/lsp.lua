@@ -29,7 +29,8 @@ local py_ls_config = {
                 diagnosticSeverityOverrides = {
                     reportUnusedParameter = "none",
                     reportAttributeAccessIssue = "none",
-                    reportOptionalSubscript = "none"
+                    reportOptionalSubscript = "none",
+                    reportOptionalMemberAccess = "none"
                 }
             },
         }
