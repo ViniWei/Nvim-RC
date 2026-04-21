@@ -27,13 +27,7 @@ local py_ls_config = {
     settings = {
         basedpyright = {
             analysis = {
-                typeCheckingMode = "standard",
-                diagnosticSeverityOverrides = {
-                    reportUnusedParameter = "none",
-                    reportAttributeAccessIssue = "none",
-                    reportOptionalSubscript = "none",
-                    reportOptionalMemberAccess = "none"
-                }
+                typeCheckingMode = "off",
             },
         }
     }
