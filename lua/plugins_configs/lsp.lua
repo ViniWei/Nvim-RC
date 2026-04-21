@@ -21,6 +21,18 @@ local ts_ls_config = {
     },
 }
 
+local py_ls_config = {
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    maxLineLength = 120
+                }
+            }
+        }
+    }
+}
+
 
 return {
     {
@@ -28,6 +40,7 @@ return {
         config = function ()
            vim.lsp.config("lua_ls", lua_ls_config)
            vim.lsp.config("ts_ls", ts_ls_config)
+           vim.lsp.config("pylsp", py_ls_config)
 
            vim.lsp.enable({ "ts_ls", "jsonls", "pylsp", "lua_ls", "vue_ls" })
         end
