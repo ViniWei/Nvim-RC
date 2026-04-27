@@ -1,4 +1,9 @@
-vim.pack.add({"https://github.com/nickjvandyke/opencode.nvim"})
+vim.pack.add({
+    {
+        src = "https://github.com/nickjvandyke/opencode.nvim",
+        version = vim.version.range('*')
+    }
+})
 
 vim.keymap.set("n", "<leader>ot", function() require("opencode").toggle() end, { desc = "Toggle opencode" })
 vim.keymap.set({ "n", "x" }, "<leader>oa", function() require("opencode").ask("@this: ", { submit = true }) end, { desc = "Ask opencode…" })
